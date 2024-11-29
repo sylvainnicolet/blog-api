@@ -1,0 +1,12 @@
+services:
+    db:
+        image: mariadb:10.6
+        container_name: blog-api-db
+        environment:
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: app
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./db/data:/var/lib/mysql
