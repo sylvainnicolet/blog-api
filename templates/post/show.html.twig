@@ -1,42 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}{{ 'post._label'|trans({'count': 1}) }}{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <h1>{{ block('title') }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ 'post.id._label'|trans }}</th>
                 <td>{{ post.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>{{ 'post.title._label'|trans }}</th>
                 <td>{{ post.title }}</td>
             </tr>
             <tr>
-                <th>Author</th>
+                <th>{{ 'post.author._label'|trans }}</th>
                 <td>{{ post.author }}</td>
             </tr>
             <tr>
-                <th>CreatedAt</th>
+                <th>{{ 'post.created_at._label'|trans }}</th>
                 <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>PublishedAt</th>
+                <th>{{ 'post.published_at._label'|trans }}</th>
                 <td>{{ post.publishedAt ? post.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{{ 'post.description._label'|trans }}</th>
                 <td>{{ post.description }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+    <a href="{{ path('app_post_index') }}">{{ 'misc.actions.back_to_list._label'|trans }}</a>
 
-    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+    <a href="{{ path('app_post_edit', {'id': post.id}) }}">{{ 'misc.actions.edit._label'|trans }}</a>
 
     {{ include('post/_delete_form.html.twig') }}
 {% endblock %}

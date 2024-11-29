@@ -30,6 +30,7 @@ final class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $post->setCreatedAt(new \DateTimeImmutable());
             $entityManager->persist($post);
             $entityManager->flush();
 

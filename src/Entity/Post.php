@@ -26,10 +26,10 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $author = null;
 
-    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     private \DateTimeImmutable $createdAt;
 
-    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $publishedAt = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]

@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Post{% endblock %}
+{% block title %}{{ 'post.crud.edit._title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Edit Post</h1>
+    <h1>{{ block('title') }}</h1>
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('post/_form.html.twig', {'button_label': 'misc.actions.edit._label'|trans}) }}
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+    <a href="{{ path('app_post_index') }}">{{ 'misc.actions.back_to_list._label'|trans }}</a>
 
     {{ include('post/_delete_form.html.twig') }}
 {% endblock %}

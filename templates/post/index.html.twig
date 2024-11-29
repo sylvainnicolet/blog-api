@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}{{ 'post._label'|trans({'count': posts|length}) }}{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+    <h1>{{ block('title') }}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>CreatedAt</th>
-                <th>PublishedAt</th>
-                <th>Description</th>
-                <th>actions</th>
+                <th>{{ 'post.id._label'|trans }}</th>
+                <th>{{ 'post.title._label'|trans }}</th>
+                <th>{{ 'post.author._label'|trans }}</th>
+                <th>{{ 'post.created_at._label'|trans }}</th>
+                <th>{{ 'post.published_at._label'|trans }}</th>
+                <th>{{ 'post.description._label'|trans }}</th>
+                <th>{{ 'misc.actions._label'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,17 +27,17 @@
                 <td>{{ post.publishedAt ? post.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ post.description }}</td>
                 <td>
-                    <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+                    <a href="{{ path('app_post_show', {'id': post.id}) }}">{{ 'misc.actions.show._label'|trans }}</a>
+                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">{{ 'misc.actions.edit._label'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">{{ 'misc.no_records_found._label'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_post_new') }}">Create new</a>
+    <a href="{{ path('app_post_new') }}">{{ 'misc.actions.create._label'|trans }}</a>
 {% endblock %}

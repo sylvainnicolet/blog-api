@@ -1,0 +1,36 @@
+post:
+    _label: '{count, plural, one {Article} other {Articles}}'
+    crud:
+        new:
+            _title: Nouvel article
+        edit:
+            _title: Édition de l'article
+    id:
+        _label: ID
+    title:
+        _label: Titre
+    author:
+        _label: Auteur
+    created_at:
+        _label: Créé le
+    published_at:
+        _label: Publié le
+    description:
+        _label: Description
+
+misc:
+    actions:
+        _label: Actions
+        create:
+            _label: Créer
+        edit:
+            _label: Modifier
+        delete:
+            _label: Supprimer
+            _confirm: Êtes-vous sûr de vouloir supprimer cet enregistrement ?
+        show:
+            _label: Voir
+        back_to_list:
+            _label: Retour à la liste
+    no_records_found:
+        _label: Aucun enregistrement trouvé
